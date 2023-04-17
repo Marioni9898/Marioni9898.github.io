@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+ Nombre: Marioni Ferretiz Medina
+    Materia: Programación Web 1
+    Fecha: 
+    Descripción: Efectos con CSS 
+
+-->
+   
+
+<html lang-"es"> 
+<head>
+<title>Plantilla</title>
+<meta charset-"utf-8" />
+<meta name="author" content="Marioni Ferretiz Medina">
+<meta name="revised" content="Jueves, 13 de Abril  de 2023">
+<meta name="description" content="Tranform, transition, Animation-, keyframes">
+<style>
+    p{background-color: black; color: aqua;}
+    .posX:hover{ transform:translateX(25px) ;}
+    .posY:hover{ transform:translateY(25px) ;}
+    .posXY:hover{ transform:translate(25px,25px) ;}
+    .rotX:hover{transform: rotateX(45deg);}
+    .rotY:hover{transform: rotateY(45deg);}
+    .rotZ:hover{transform: rotateZ(45deg);}
+    .sizeX:hover{transform: scaleX(1.5);}
+    .sizeY:hover{transform: scaleY(1.5);}
+    .sizeXY:hover{transform: scale(0.75,0.75);}
+    .skewX:hover{transform: skewX(30deg);}
+    .skewY:hover{transform: skewY(30deg);}
+    .skewXY:hover{transform: skew(30deg);}
+    .mul:hover{transform: matrix(1,0,0,2,50,0); }
+    .efecto { width: 25%; font-size:50%; transition: font-size 0.5s, width 0.5s; }
+    .efecto:hover {width: 50%; font-size: 150%; }
+    .rainbow{ width: 100px; height: 100px; background-color: red;
+        animation-name: rgb; animation-duration: 1s; 
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;}
+        @keyframes rgb { 
+            0% {background-color: red;}
+            25% {background-color: orange;}
+            50% {background-color: yellow;}
+            75% {background-color: green;}
+            100% {background-color: blue;}
+        }
+    
+</style>
+</head>
+<body>
+    <hgroup>
+        <h1>Transform</h1>
+        <h2>Translate</h2>
+        <p>UPSLP (Nromal)</p>
+        <p class="posX">UPSLP (Translate X)</p>
+        <p class="posY">UPSLP (Translate Y)</p>
+        <p class="posXY">UPSLP (Translate X,Y)</p>
+        
+    </hgroup>
+    <hgroup>
+        <h2>Rotate</h2>
+        <p class="rotX">UPSLP (Rotate X)</p>
+        <p class="rotY">UPSLP (Rotate Y)</p>
+        <p class="rotZ">UPSLP (Rotate Z)</p>
+    </hgroup>
+    <hgroup>
+        <h2>Scale</h2>
+        <p class="sizeX">UPSLP (Scale X)</p>
+        <p class="sizeY">UPSLP (Scale Y)</p>
+        <p class="sizeXY">UPSLP (Scale X,Y)</p>
+    </hgroup>
+    <hgroup>
+        <h2>Skew</h2>
+        <p class="skewX">UPSLP (Skew X)</p>
+        <p class="skewY">UPSLP (Skew Y)</p>
+        <p class="skewXY">UPSLP (Skew X,Y)</p>
+    </hgroup>
+    <hgroup>
+        <h2>Múltiple</h2>
+        <p class="mul">UPSLP (Mover y Escalar)</p>
+        <div class="efecto">UPSLP (Mover y Escalar)</div>
+        <div class="efecto">UPSLP (Mover y Escalar)</div>
+        <div class="efecto">UPSLP (Mover y Escalar)</div>
+        <div class="efecto">UPSLP (Mover y Escalar)</div>
+        <div class="efecto">UPSLP (Mover y Escalar)</div>
+        
+    </hgroup>
+    <hgroup>
+    <h1>...</h1>
+    <div class="efecto"><a href="#">Menú 1</a></div>
+    <div class="efecto"><a href="#">Menú 2</a></div>
+    <div class="efecto"><a href="#">Menú 3</a></div>
+    <div class="efecto"><a href="#">Menú 4</a></div>
+    <div class="efecto"><a href="#">Menú 5</a></div>
+    </hgroup>
+    <hgroup>
+        <h2>Animation</h2>
+        <div class="rainbow"></div>
+    </hgroup>
+</body>
+</html>
