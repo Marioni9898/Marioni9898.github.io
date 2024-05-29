@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitud de Información</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            margin-top: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Solicitud de Información</h1>
+
+    <form action="#" method="post">
+        <div class="section">
+            <h2>Información Personal</h2>
+            <label for="primerNombre">Primer Nombre *</label>
+            <input type="text" id="primerNombre" name="primerNombre" required>
+
+            <label for="segundoNombre">Segundo Nombre</label>
+            <input type="text" id="segundoNombre" name="segundoNombre">
+
+            <label for="primerApellido">Primer Apellido *</label>
+            <input type="text" id="primerApellido" name="primerApellido" required>
+
+            <label for="segundoApellido">Segundo Apellido *</label>
+            <input type="text" id="segundoApellido" name="segundoApellido" required>
+        </div>
+
+        <div class="section">
+            <h2>Información de Direcciones</h2>
+            <label for="tipoDireccion">Tipo de Dirección *</label>
+            <select id="tipoDireccion" name="tipoDireccion" required>
+                <option value="">Seleccione</option>
+                <option value="casa">Casa</option>
+                <option value="trabajo">Trabajo</option>
+            </select>
+
+            <label for="calle">Calle *</label>
+            <input type="text" id="calle" name="calle" required>
+
+            <label for="ciudad">Ciudad *</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+
+            <label for="pais">País *</label>
+            <select id="pais" name="pais" required>
+                <option value="">Seleccione</option>
+                <option value="mexico">México</option>
+                <!-- Agregar otros países según sea necesario -->
+            </select>
+        </div>
+
+        <div class="section">
+            <h2>Información de Contacto</h2>
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Teléfonos</label>
+            <div id="telefonos">
+                <div>
+                    <label for="tipoTelefono1">Tipo de Teléfono</label>
+                    <select id="tipoTelefono1" name="tipoTelefono[]">
+                        <option value="movil">Móvil</option>
+                        <option value="casa">Casa</option>
+                        <option value="trabajo">Trabajo</option>
+                    </select>
+                    <label for="paisTelefono1">País</label>
+                    <select id="paisTelefono1" name="paisTelefono[]">
+                        <option value="mexico">México</option>
+                        <!-- Agregar otros países según sea necesario -->
+                    </select>
+                    <label for="telefono1">Teléfono</label>
+                    <input type="text" id="telefono1" name="telefono[]" required>
+                </div>
+            </div>
+            <button type="button" onclick="agregarTelefono()">Agregar Más</button>
+        </div>
+
+        <div class="section">
+            <h2>Información Académica</h2>
+            <label for="programa">Programa *</label>
+            <select id="programa" name="programa" required>
+                <option value="">Seleccione</option>
+                <option value="iti2001">Ingeniería en Tecnologías de la Información</option>
+                <option value="item2002">Ingeniería en Telemática</option>
+                <option value="itma2005">Ingeniería en Tecnologías de Manufactura</option>
+                <option value="isti2001">Ingeniería en Sistemas y Tecnologías Industriales</option>
+                <option value="lag2001">Licenciatura en Administración y Gestión</option>
+                <option value="lmkt2001">Licenciatura en Mercadotecnia Internacional</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <h2>Fuentes</h2>
+            <label><input type="radio" name="fuente" value="feria" required> Feria profesiográfica</label>
+            <label><input type="radio" name="fuente" value="bachillerato"> Plática de promoción en bachillerato</label>
+            <label><input type="radio" name="fuente" value="facebook"> Promoción en Facebook</label>
+            <label><input type="radio" name="fuente" value="instagram"> Promoción en Instagram</label>
+            <label><input type="radio" name="fuente" value="web"> Promoción en Página Web</label>
+            <label><input type="radio" name="fuente" value="informativas"> Sesiones informativas</label>
+            <label><input type="radio" name="fuente" value="youtube"> Promoción en YOUTUBE</label>
+        </div>
+
+        <div class="section">
+            <h2>Aviso de Privacidad</h2>
+            <p>
+                Los datos personales recabados serán protegidos y serán incorporados y tratados en el sistema de datos personales del área de Comunicación y Promoción, con fundamento en el artículo 3 fracción I, III, 4 fracción I y demás relativos del Decreto de Creación, y cuya finalidad es la difusión y promoción de la UPSLP y sus programas educativos, y podrán ser transmitidos por cualquier medio ya sea impreso, electrónico o cualquier otro, con la finalidad de difundir y promocionar a la UPSLP y sus programas educativos, además de otras transmisiones previstas en la Ley. El responsable del sistema de datos personales es el Departamento de Comunicación y Promoción, y la dirección donde el interesado podrá ejercer los derechos de acceso y corrección ante la misma es en la Unidad de información de la UPSLP, ubicada en la calle Urbano Villalón número 500 la Ladrillera. Lo anterior se informa en cumplimiento de la norma Décima Cuarta de las Normas para el Tratamiento y Protección de Datos Personales, publicados en el Periódico Oficial del Estado el 16 de agosto de 2008.
+            </p>
+        </div>
+
+        <button type="submit">Guardar</button>
+        <button type="reset">Anular</button>
+    </form>
+
+    <script>
+        function agregarTelefono() {
+            const telefonosDiv = document.getElementById('telefonos');
+            const nuevoTelefonoDiv = document.createElement('div');
+
+            const nuevoTipoTelefono = document.createElement('select');
+            nuevoTipoTelefono.name = 'tipoTelefono[]';
+            nuevoTipoTelefono.innerHTML = `
+                <option value="movil">Móvil</option>
+                <option value="casa">Casa</option>
+                <option value="trabajo">Trabajo</option>
+            `;
+
+            const nuevoPaisTelefono = document.createElement('select');
+            nuevoPaisTelefono.name = 'paisTelefono[]';
+            nuevoPaisTelefono.innerHTML = `
+                <option value="mexico">México</option>
+                <!-- Agregar otros países según sea necesario -->
+            `;
+
+            const nuevoTelefono = document.createElement('input');
+            nuevoTelefono.type = 'text';
+            nuevoTelefono.name = 'telefono[]';
+            nuevoTelefono.required = true;
+
+            nuevoTelefonoDiv.appendChild(nuevoTipoTelefono);
+            nuevoTelefonoDiv.appendChild(document.createTextNode(' '));
+            nuevoTelefonoDiv.appendChild(nuevoPaisTelefono);
+            nuevoTelefonoDiv.appendChild(document.createTextNode(' '));
+            nuevoTelefonoDiv.appendChild(nuevoTelefono);
+
+            telefonosDiv.appendChild(nuevoTelefonoDiv);
+        }
+    </script>
+</body>
+</html>
